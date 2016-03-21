@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="/pico/client.js"></script>
+		
+		<script>
+			pico.load("led"); 
+				
+ 			function turnOnOff(){
+				var state = document.getElementById("toggle").checked;
+				led.setState(state);
+			}
+
+			function isOnOff(){
+				var displayMessage = function(message){
+               		document.getElementById('led_state').innerHTML = message;
+           		}
+           		led.getState("21", displayMessage);
+        		}
+
+			//Runs when page is loaded
+			pico.main = isOnOff();
+		</script>
+	</head>
+
+	<center>
+		<input id="toggle" type="checkbox" onclick="turnOnOff()"> LED Switch </input>
+		<div id="led_state">Checking State</div>
+	</center>
+
+</html>
