@@ -5,5 +5,6 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 
 def getState(pin):
+	GPIO.setup(pin, GPIO.OUT)
 	state = GPIO.input(pin)
-	return "LED at pin" + str(pin) + "is state" + str(state)
+	return "LED at pin " + str(pin) + " is state " + str(state)
