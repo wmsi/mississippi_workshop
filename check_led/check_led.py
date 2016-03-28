@@ -6,4 +6,4 @@ GPIO.setmode(GPIO.BCM)
 
 def getState(pin):
 	state = GPIO.input(pin)
-	return "LED at pin" + pin + "is state" + state
+	return "LED at pin" + str(pin) + "is state" + str(state)
