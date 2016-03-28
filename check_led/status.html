@@ -6,25 +6,17 @@
 		<script type="text/javascript">
 			pico.load('check_led');
 			
-			function check(){
-				var mess = check_led.getState(21);
-				alert(mess);
-				document.getElementById('message').innerHTML = mess;
-			}
-			
-			/*
 			pico.main = function() {
 				var displayMessage = function(message){
 				document.getElementById('message').innerHTML = message;
 			}
 				check_led.getState(21, displayMessage);
 			}
-			*/
+		
 		</script>
 	</head>
 
 	<body>
-		<button onclick="check()"> Check LED State</button>
 		<p id="message"></p>
 	</body>
 
