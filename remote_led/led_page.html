@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="/pico/client.js"></script>
+		
+		<script type="text/javascript">
+			pico.load("control_led"); 
+				
+ 			function turnOnOff(){
+				var state = document.getElementById("toggle").checked;
+				led.setState(state);
+			}
+		</script>
+	</head>
+
+	<body>
+		<input id="toggle" type="checkbox" onclick="turnOnOff()"> LED Switch </input>
+	</body>
+</html>

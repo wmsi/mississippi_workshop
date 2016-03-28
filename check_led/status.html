@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="/pico/client.js"></script>
+	    
+		<script type="text/javascript">
+			pico.load('check_led.py');
+
+			pico.main = function() {
+				var displayMessage = function(message){
+				document.getElementById('message').innerHTML = message;
+			}
+				example.getState(21, displayMessage);
+			}
+		</script>
+	</head>
+
+	<body>
+		   <div id="message"></div>
+	</body>
+
+</html>
