@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="/pico/client.js"></script>
+	    
+		<script type="text/javascript">
+			pico.load('check_button');
+			
+			pico.main = function() {
+				var displayMessage = function(message){
+				document.getElementById('message').innerHTML = message;
+			}
+				check_button.getState(4, displayMessage);
+			}
+		
+		</script>
+	</head>
+
+	<body>
+		<p> The state of the button is: </p>
+		<p id="message"></p>
+	</body>
+
+</html>
