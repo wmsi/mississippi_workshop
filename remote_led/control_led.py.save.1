@@ -1,0 +1,15 @@
+import pico 
+import ev3dev.ev3 as ev3
+
+# define motor
+m = ev3.LargeMotor('outA')
+
+# set the motor to run for 3 seconds at 75% power
+m.run_timed(time_sp=3000,duty_cycle_sp=75)
+
+# Set the initial state to off
+GPIO.output(led, 0)
+
+# Function called by javascript to set state
+def setState(state):
+	GPIO.output(led, state)

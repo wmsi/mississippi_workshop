@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="/pico/client.js"></script>
+	    
+		<script type="text/javascript">
+			pico.load('check_lightSensor');
+			
+			pico.main = function() {
+				var displayMessage = function(message){
+				document.getElementById('message').innerHTML = message;
+			}
+				check_lightSensor.getState(1, displayMessage);
+			}
+		
+		</script>
+	</head>
+
+	<body>
+		<p id="message"></p>
+	</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="/pico/client.js"></script>
+		
+		<script type="text/javascript">
+			pico.load("control_motor"); 
+				
+ 			function turnOnOff(){
+				var state = document.getElementById("toggle").checked;
+				control_motor.setState(state);
+			}
+		</script>
+	</head>
+
+	<body>
+		<input id="toggle" type="checkbox" onclick="turnOnOff()"> LED Switch </input>
+		<b>Hello Jessie!!</b>
+	</body>
+</html>
