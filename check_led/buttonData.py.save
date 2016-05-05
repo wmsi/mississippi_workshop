@@ -29,7 +29,7 @@ import socket            # socket used to get host name/IP
 server = "data.sparkfun.com" # base URL of your feed
 publicKey = "v0x19gwdXQsz8XrRNA2g" # public key, everyone can see this
 privateKey = "aPgJq24vY0car5Mj8mv2"  # private key, only you should know
-fields = ["time","button_state","name"] #Your feed's data fields
+fields = ["button_state","name"] #Your feed's data fields
 
 ######################
 ## I/O Stuff & Misc ##
@@ -61,7 +61,7 @@ try:
             # Field 0, light, gets the local time:
             data[fields[0]] = time.strftime("%A %B %d, %Y %H:%M:%S %Z")
             # Field 1, switch, gets the switch status:
-            data[fields[1]] = GPIO.input(buttonPin)
+  
             # Field 2, name, gets the pi's local name:
             data[fields[2]] = myname
             # Next, we need to encode that data into a url format:
