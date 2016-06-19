@@ -43,6 +43,7 @@ myname = socket.gethostname() # Send local host name as one data field
 ## I/O Setup #
 ##############
 ts=ev3.TouchSensor('in'+portNumberStr) # setup sensor
+button=ev3.Button() 
 
 
 ##########
@@ -54,7 +55,7 @@ try:
     while 1:
         # If the button is pressed, we'll send our data. It's active-low
         # so we need to check if it's 0.
-        if (ts.value()):
+        if (button.any()):
             print("Sending an update!")
             # Our first job is to create the data set. Should turn into
             # something like "light=1234&switch=0&name=raspberrypi"
