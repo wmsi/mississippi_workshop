@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="/pico.js"></script>
+		<script src="/control_led.js"></script>
+		
+		<script type="text/javascript">
+			var control_led = pico.importModule('control_led');
+
+			function turnOnOffRed(){
+				var state = document.getElementById("toggleRed").checked;
+				control_led.setStateRed(state);
+				document.getElementById("toggleRed").checked = false;
+			} 
+			
+ 			function turnOnOffYellow(){
+				var state = document.getElementById("toggleYellow").checked;
+				control_led.setStateYellow(state);
+				document.getElementById("toggleYellow").checked = false;
+			}
+			
+			function turnOnOffGreen(){
+				var state = document.getElementById("toggleGreen").checked;
+				control_led.setStateGreen(state);
+				document.getElementById("toggleGreen").checked = false;
+			} 
+			 
+		</script>
+	</head>
+
+	<body>
+		<p>Welcome to the traffic light control system!</p>
+		<p>Select a light to turn on!</p>
+		
+		<input id="toggleRed" type="checkbox" onclick="turnOnOffRed()"> Red LED Switch </input>
+		<p></p>
+		<input id="toggleYellow" type="checkbox" onclick="turnOnOffYellow()"> Yellow LED Switch </input>
+		<p></p>
+		<input id="toggleGreen" type="checkbox" onclick="turnOnOffGreen()"> Green LED Switch </input>
+	</body>
+</html>
